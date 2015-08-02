@@ -1,0 +1,40 @@
+
+- name: Ensure that Python2 packages are installed
+  apt:
+    pkg: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items: python_apt_packages_2
+  when: python_install_2
+
+- name: Ensure that Python3 packages are installed
+  apt:
+    pkg: "{{item}}"
+    state: present
+    update_cache: yes
+  with_items: python_apt_packages_3
+  when: python_install_3
+
+- name: Update pip
+  pip:
+    name: "pip{% if python_pip_version is defined %}=={{ python_pip_version }}{% endif %}"
+    extra_args: "{% if python_pip_version is not defined %}--upgrade{% endif %}"
+    state: present
+
+- name: Update setuptools
+  pip:
+    name: "setuptools{% if python_setuptools_version is defined %}=={{ python_setuptools_version }}{% endif %}"
+    extra_args: "{% if python_setuptools_version is not defined %}--upgrade{% endif %}"
+    state: present
+
+- name: Install custom python requirements
+  pip:
+    name: "{{ item }}"
+    state: present
+  with_items: python_pip_packages
+
+- name: Install virtualenv
+  pip:
+    name: "virtualenv{% if python_virtualenv_version is defined %}=={{ python_virtualenv_version }}{% endif %}"
+    extra_args: "{% if python_virtualenv_version is not defined %}--upgrade{% endif %}"
+    state: present

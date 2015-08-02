@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Przemek Lewandowski
+  company: SUNSCRAPERS
+  description: This role installs Python ubuntu packages including development headers, pip, setuptools and virtualenv.
+  min_ansible_version: 1.9
+  license: MIT
+  platforms:
+  - name: Ubuntu
+    versions:
+    - Trusty 
+  categories:
+  - system
+  - packaging
+  - development
+
+dependencies: []

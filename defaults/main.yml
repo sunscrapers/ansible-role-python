@@ -1,0 +1,18 @@
+
+python_apt_packages_2:
+  - python
+  - python-dev
+  - python-pip
+
+python_apt_packages_3:
+  - python3
+  - python3-pip
+  - python3-dev
+
+python_install_2: yes
+python_install_3: yes
+
+python_pip_packages: []
+# python_pip_version:           # default to latest
+# python_setuptools_version:    # default to latest
+# python_virtualenv_version:    # default to latest
