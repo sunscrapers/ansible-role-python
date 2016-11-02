@@ -7,7 +7,8 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - Trusty 
+    - Trusty
+    - Xenial
   categories:
   - system
   - packaging

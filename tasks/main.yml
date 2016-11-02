@@ -20,6 +20,8 @@
     name: "pip{% if python_pip_version is defined %}=={{ python_pip_version }}{% endif %}"
     extra_args: "{% if python_pip_version is not defined %}--upgrade{% endif %}"
     state: present
+    executable: "{{ python_pip_executable }}"
+  when: python_update_pip
 
 - name: Update setuptools
   pip:

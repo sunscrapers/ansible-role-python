@@ -1,5 +1,8 @@
 - hosts: all
+  gather_facts: no
   vars_files:
     - defaults/main.yml
   tasks:
+    - raw: sudo apt-get -y install python
+    - setup:
     - include: tasks/main.yml
