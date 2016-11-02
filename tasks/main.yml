@@ -28,6 +28,8 @@
     name: "setuptools{% if python_setuptools_version is defined %}=={{ python_setuptools_version }}{% endif %}"
     extra_args: "{% if python_setuptools_version is not defined %}--upgrade{% endif %}"
     state: present
+    executable: "{{ python_pip_executable }}"
+  when: python_update_setuptools
 
 - name: Install custom python requirements
   pip:
