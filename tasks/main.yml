@@ -35,6 +35,7 @@
   pip:
     name: "{{ item }}"
     state: present
+    executable: "{{ python_pip_executable }}"
   with_items: "{{ python_pip_packages }}"
 
 - name: Install virtualenv
@@ -42,3 +43,5 @@
     name: "virtualenv{% if python_virtualenv_version is defined %}=={{ python_virtualenv_version }}{% endif %}"
     extra_args: "{% if python_virtualenv_version is not defined %}--upgrade{% endif %}"
     state: present
+    executable: "{{ python_pip_executable }}"
+  when: python_install_virtualenv

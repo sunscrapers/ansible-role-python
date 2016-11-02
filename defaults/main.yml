@@ -15,6 +15,7 @@ python_install_3: yes
 python_pip_packages: []
 python_update_pip: no
 python_update_setuptools: no
+python_install_virtualenv: no
 python_pip_executable: 
 # python_pip_version:           # default to latest
 # python_setuptools_version:    # default to latest
