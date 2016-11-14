@@ -10,26 +10,28 @@ Developed by [SUNSCRAPERS](http://sunscrapers.com/) with passion & patience.
 To customize the role you can override the following default variables:
 
 ```yaml
-python_apt_packages:
+python_install_2: yes
+python_apt_packages_2:
   - python
   - python-dev
   - python-pip
+
+python_install_3: yes
+python_apt_packages_3:
+  - python
+  - python-dev
+  - python-pip
+
 python_pip_packages: []
+
+python_update_pip: no
+python_update_setuptools: no
+python_install_virtualenv: no
+
+python_pip_executable:
 # python_pip_version:           # default to latest
 # python_setuptools_version:    # default to latest
 # python_virtualenv_version:    # default to latest
-```
-
-In order to install Python 3 as well customize variables like that:
-
-```yaml
-python_apt_packages:
-  - python
-  - python-pip
-  - python-dev
-  - python3
-  - python3-pip
-  - python3-dev
 ```
 
 ## Development
@@ -41,7 +43,7 @@ $ vagrant up
 ```
 
 to start and provision virtual machine. You can run provisioning again to test idempotence:
- 
+
 ```
 $ vagrant provision
 ```
