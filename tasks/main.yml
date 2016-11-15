@@ -4,6 +4,7 @@
     pkg: "{{item}}"
     state: present
     update_cache: yes
+    cache_valid_time: 1800
   with_items: "{{ python_apt_packages_2 }}"
   when: python_install_2
 
@@ -12,6 +13,7 @@
     pkg: "{{item}}"
     state: present
     update_cache: yes
+    cache_valid_time: 1800
   with_items: "{{ python_apt_packages_3 }}"
   when: python_install_3
 
